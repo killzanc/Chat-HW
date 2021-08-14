@@ -1,0 +1,27 @@
+.header{
+    width: 100%;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+.list{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.item__link{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgb(0, 201, 236);
+    font-weight: 700;
+    font-size: 20px;
+}
+.title{
+    text-transform: uppercase;
+    padding-right: 7px;
+}

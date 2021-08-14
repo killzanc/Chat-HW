@@ -1,0 +1,72 @@
+.container{
+    border: 2px solid black;
+    background-image: url(../images/chatbg.jpg);
+}
+@mixin triangle($width, $color, $side){
+    content : "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+
+
+    @if $side == "top"{
+        border-top: $width solid $color ;
+        border-right:$width solid transparent ;
+        border-bottom:$width solid transparent ;
+        border-left:$width solid transparent ;
+    }
+
+    @if $side == "bottom" {
+        border-bottom:$width solid $color ;
+        border-right:$width solid transparent ;
+        border-top: $width solid transparent ;
+        border-left:$width solid transparent ;
+    }
+}
+.msg__wrapper{
+
+    padding:10px;
+    width: 536px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.msg{
+    position: relative;
+    padding: 10px;
+    width: 300px;
+    background-color: lightblue;
+    border-radius: 10px;
+    min-height: 100px;   
+    margin-bottom: 10px;
+
+    &__person2 {
+    background-color: #91f080;
+    }
+
+    &__person2::before {
+        top: 0; 
+        right: 100%;
+        transform: translateX(50%);
+        
+        @include triangle(20px, #91f080, "top");
+    }
+
+    &__person1 {
+        background-color: lightblue;
+        align-self: flex-end;
+    }
+
+    &__person1::after {
+        bottom: 0; 
+        left: 100%;
+        transform: translateX(-50%);
+
+        @include triangle(22px, lightblue, "bottom" )
+    }
+}
+
+.msg__wrapper{
+    padding: 30px;
+}
